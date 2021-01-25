@@ -1,0 +1,8 @@
+#please do not change this file
+
+Chaincode: 
+  name: aichain
+Channels:
+  channel1:
+    name: aichannel
+

@@ -1,0 +1,14 @@
+
+#This configuration file contains the basic details of all organizations, channels and chaincodes
+
+Chaincode: 
+  name: fabcar_go
+Channels:
+  channel1:
+    name: aichannel
+Org1:
+  name: org1
+Org2:
+  name: org2
+Org3:
+  name: org3
