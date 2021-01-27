@@ -1,0 +1,98 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: peer0iiit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: peer0iiit
+  template:
+    metadata:
+      labels:
+        name: peer0iiit
+    spec:
+      nodeName: worker-node-2
+      volumes: 
+      - name: fabricfiles
+        persistentVolumeClaim:
+          claimName: fabric-pvc
+      - name: dockersocket
+        hostPath: 
+          path: /var/run/docker.sock
+
+      containers:
+      - name: peer
+        image: hyperledger/fabric-peer:2.0.1
+        command: ["/bin/sh", "-c", "peer node start"]
+        env:
+        - name: TZ
+          value: "Asia/Kolkata"
+        - name: CORE_PEER_ADDRESSAUTODETECT
+          value: "true"
+        - name: CORE_PEER_ID
+          value: peer0.iiit.ai.com
+        - name: CORE_PEER_ADDRESS
+          value: peer0.iiit.ai.com:7051
+        - name: CORE_PEER_LISTENADDRESS
+          value: 0.0.0.0:7051
+        - name: CORE_PEER_EVENTS_ADDRESS
+          value: 0.0.0.0:7061
+        - name: CORE_PEER_CHAINCODELISTENADDRESS
+          value: 0.0.0.0:7052
+        - name: CORE_PEER_GOSSIP_BOOTSTRAP
+          value: peer0.iiit.ai.com:7051
+        - name: CORE_PEER_GOSSIP_ENDPOINT
+          value: peer0.iiit.ai.com:7051
+        - name: CORE_PEER_GOSSIP_EXTERNALENDPOINT
+          value: peer0.iiit.ai.com:7051
+        - name: CORE_PEER_GOSSIP_ORGLEADER
+          value: "false"
+        - name: CORE_PEER_GOSSIP_USERLEADERELECTION
+          value: "true"
+        - name: CORE_PEER_PROFILE_ENABLED
+          value: "true"
+        - name: CORE_VM_ENDPOINT
+          value: unix:///var/run/docker.sock
+        - name: CORE_PEER_LOCALMSPID
+          value: Org3MSP
+        - name: CORE_PEER_MSPCONFIGPATH
+          value: /repo/config/crypto-config/peerOrganizations/iiit.ai.com/peers/peer0.iiit.ai.com/msp/
+        - name: FABRIC_LOGGING_SPEC
+          value: debug
+        - name: CORE_PEER_TLS_ENABLED
+          value: "true"
+        - name: CORE_PEER_TLS_CERT_FILE
+          value: /repo/config/crypto-config/peerOrganizations/iiit.ai.com/peers/peer0.iiit.ai.com/tls/server.crt
+        - name: CORE_PEER_TLS_KEY_FILE
+          value: /repo/config/crypto-config/peerOrganizations/iiit.ai.com/peers/peer0.iiit.ai.com/tls/server.key
+        - name: CORE_PEER_TLS_ROOTCERT_FILE
+          value: /repo/config/crypto-config/peerOrganizations/iiit.ai.com/peers/peer0.iiit.ai.com/tls/ca.crt
+        - name: CORE_LEDGER_STATE_STATEDATABASE
+          value: "CouchDB"
+        - name: CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS
+          value: "localhost:5984"
+        - name: FABRIC_CFG_PATH
+          value: /etc/hyperledger/fabric/
+        - name: ORDERER_URL
+          value: orderer:7050
+        # - name: ORDERER_URL
+        #   value: orderer2:7050
+        # - name: ORDERER_URL
+        #   value: orderer3:7050
+        # - name: ORDERER_URL
+        #   value: orderer4:7050
+        # - name: ORDERER_URL
+        #   value: orderer5:7050
+        volumeMounts:
+        - mountPath: /repo/config
+          name: fabricfiles
+        - mountPath: /var/run/docker.sock
+          name: dockersocket
+      - name: couchdb
+        image: hyperledger/fabric-couchdb:0.4.15
+
+
+
+
+

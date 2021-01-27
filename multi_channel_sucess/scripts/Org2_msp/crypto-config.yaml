@@ -1,0 +1,9 @@
+PeerOrgs:
+  - Name: Org2
+    Domain: bel.ai.com
+    EnableNodeOUs: true    
+    Template:
+      Count: 3
+    Users:
+      Count: 1
+  
