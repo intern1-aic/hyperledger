@@ -15,14 +15,18 @@ export FABRIC_CFG_PATH=/repo/config
 
 ./bin/configtxgen -profile SampleMultiNodeEtcdRaft -channelID byfn-sys-channel -outputBlock ./channel-artifacts/genesis.block
 
-export CHANNEL_NAME=channel1  && ./bin/configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel1.tx -channelID $CHANNEL_NAME
-export CHANNEL_NAME=channel2  && ./bin/configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel2.tx -channelID $CHANNEL_NAME
-export CHANNEL_NAME=channel3  && ./bin/configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel3.tx -channelID $CHANNEL_NAME
-export CHANNEL_NAME=channel4  && ./bin/configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel4.tx -channelID $CHANNEL_NAME
 
-./bin/configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID "channel1" -asOrg Org1MSP
-./bin/configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID "channel2" -asOrg Org2MSP
-./bin/configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org3MSPanchors.tx -channelID "channel3" -asOrg Org3MSP
+export CHANNEL_NAME=channel4  && ./bin/configtxgen -profile ThreeOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel4.tx -channelID $CHANNEL_NAME
+
+
+
+export CHANNEL_NAME=channel1  && ./bin/configtxgen -profile InnerOrgsChannel1 -outputCreateChannelTx ./channel-artifacts/channel1.tx -channelID $CHANNEL_NAME
+export CHANNEL_NAME=channel2  && ./bin/configtxgen -profile InnerOrgsChannel2 -outputCreateChannelTx ./channel-artifacts/channel2.tx -channelID $CHANNEL_NAME
+export CHANNEL_NAME=channel3  && ./bin/configtxgen -profile InnerOrgsChannel3 -outputCreateChannelTx ./channel-artifacts/channel3.tx -channelID $CHANNEL_NAME
+
+./bin/configtxgen -profile InnerOrgsChannel1 -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID "channel1" -asOrg Org1MSP
+./bin/configtxgen -profile InnerOrgsChannel2 -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID "channel2" -asOrg Org2MSP
+./bin/configtxgen -profile InnerOrgsChannel3 -outputAnchorPeersUpdate ./channel-artifacts/Org3MSPanchors.tx -channelID "channel3" -asOrg Org3MSP
 
 
 cp -r ./channel-artifacts/* /repo/config

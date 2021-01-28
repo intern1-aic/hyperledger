@@ -13,13 +13,13 @@ Channels:
     name: channel4
 Org1:
   name: aic
-  chaincode: fabcar_go1
+  chaincode: fabcar_1
 Org2:
   name: bel
-  chaincode: fabcar_go2
+  chaincode: fabcar_2
 Org3:
   name: iiit
-  chaincode: fabcar_go2
+  chaincode: fabcar_3
 InterOrg:
-  chaincode: fabcar_all
+  chaincode: fabcar_go_all
 

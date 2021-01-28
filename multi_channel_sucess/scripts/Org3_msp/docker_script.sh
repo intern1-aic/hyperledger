@@ -1,7 +1,7 @@
 
 begin=`date +"%T"`
 OrgName="cli-iiit"
-CHANNEL_NAME=aichannel3
+CHANNEL_NAME=channel3
 
 docker ps >> temp.txt
 grep "k8s_cli_cli-iiit" temp.txt >> temp2.txt
@@ -11,8 +11,8 @@ rm -f temp.txt temp2.txt
 line=$(head -n 1 temp3.txt)
 
 while [[ $T -eq 0 ]]; do
-	docker exec $line /bin/sh -c "peer channel create -o orderer3:9050 -c aichannel3 -f /repo/config/aichannel3.tx --tls --cafile /repo/config/Org3MSPanchors.tx --tls --cafile /repo/config/crypto-config/ordererOrganizations/ai.com/orderers/orderer3.ai.com/msp/tlscacerts/tlsca.ai.com-cert.pem"
-	docker exec $line /bin/sh -c "peer channel join -b aichannel3.block"
+	docker exec $line /bin/sh -c "peer channel create -o orderer3:9050 -c channel3 -f /repo/config/channel3.tx --tls --cafile /repo/config/Org3MSPanchors.tx --tls --cafile /repo/config/crypto-config/ordererOrganizations/ai.com/orderers/orderer3.ai.com/msp/tlscacerts/tlsca.ai.com-cert.pem"
+	docker exec $line /bin/sh -c "peer channel join -b channel3.block"
 	docker exec $line /bin/sh -c "peer channel list" >> list.txt 
 	grep $CHANNEL_NAME list.txt
 	if [[ $? -eq 0 ]]; then
@@ -32,8 +32,8 @@ while IFS= read -r line2; do
 
 S=0
 	while [[ $S -eq 0 ]]; do
-		docker exec $line2 /bin/sh -c "peer channel fetch 0 aichannel3.block -c aichannel3 -o orderer3:9050 --tls --cafile /repo/config/crypto-config/ordererOrganizations/ai.com/orderers/orderer3.ai.com/msp/tlscacerts/tlsca.ai.com-cert.pem"
-		docker exec $line2 /bin/sh -c "peer channel join -b aichannel3.block"
+		docker exec $line2 /bin/sh -c "peer channel fetch 0 channel3.block -c channel3 -o orderer3:9050 --tls --cafile /repo/config/crypto-config/ordererOrganizations/ai.com/orderers/orderer3.ai.com/msp/tlscacerts/tlsca.ai.com-cert.pem"
+		docker exec $line2 /bin/sh -c "peer channel join -b channel3.block"
 		docker exec $line /bin/sh -c "peer channel list" >> list.txt 
 		grep $CHANNEL_NAME list.txt
 

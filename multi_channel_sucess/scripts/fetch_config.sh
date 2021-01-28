@@ -105,9 +105,9 @@ sed -i "s/$OldChannelName1/$NewChannelName1/g" $line
 sed -i "s/$OldChannelName2/$NewChannelName2/g" $line
 sed -i "s/$OldChannelName3/$NewChannelName3/g" $line
 sed -i "s/$OldChannelName4/$NewChannelName4/g" $line
-# sed -i "s/$OldChaincode-Org1/$NewChaincode-Org1/g" $line
-# sed -i "s/$OldChaincode-Org2/$NewChaincode-Org2/g" $line
-# sed -i "s/$OldChaincode-Org3/$NewChaincode-Org3/g" $line
+sed -i "s/$OldChaincodeOrg1/$NewChaincodeOrg1/g" $line
+sed -i "s/$OldChaincodeOrg2/$NewChaincodeOrg2/g" $line
+sed -i "s/$OldChaincodeOrg3/$NewChaincodeOrg3/g" $line
 sed -i "s/$OldChaincodeAllOrg/$NewChaincodeAllOrg/g" $line
 done < files.blit
 

@@ -145,7 +145,7 @@ Channel: &ChannelDefaults
         <<: *ChannelCapabilities
 Profiles:
 
-    TwoOrgsChannel:
+    ThreeOrgsChannel:
         Consortium: SampleConsortium
         <<: *ChannelDefaults
         Application:
@@ -154,6 +154,39 @@ Profiles:
                 - *Org1
                 - *Org2
                 - *Org3
+#consortiums
+            Capabilities:
+                <<: *ApplicationCapabilities
+
+    InnerOrgsChannel1:
+        Consortium: InnerConsortium1
+        <<: *ChannelDefaults
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org1               
+#consortiums
+            Capabilities:
+                <<: *ApplicationCapabilities
+
+    InnerOrgsChannel2:
+        Consortium: InnerConsortium2
+        <<: *ChannelDefaults
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org2               
+#consortiums
+            Capabilities:
+                <<: *ApplicationCapabilities
+
+    InnerOrgsChannel3:
+        Consortium: InnerConsortium3
+        <<: *ChannelDefaults
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org3               
 #consortiums
             Capabilities:
                 <<: *ApplicationCapabilities
@@ -209,4 +242,15 @@ Profiles:
                 - *Org2
                 - *Org3
 #sample
+
+            InnerConsortium1:
+                Organizations:
+                - *Org1
+            InnerConsortium2:
+                Organizations:
+                - *Org2
+            InnerConsortium3:
+                Organizations:
+                - *Org3
+               
 #This is the end of the file              

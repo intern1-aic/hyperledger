@@ -6,12 +6,12 @@ function executeContainer()
 	s="$1"
 	peer="peer$s"
 	docker ps >> temp.txt
-	grep "k8s_cli_cli-aic-$peer" temp.txt >> temp2.txt
+	grep "k8s_cli_cli-iiit-$peer" temp.txt >> temp2.txt
 	awk '{ print $1 }' temp2.txt > temp3.txt
 	rm -f temp.txt temp2.txt
 	line=$(head -n 1 temp3.txt)
 	rm -f temp3.txt
-	echo "You are inside on $peer aic:Organiaztion"
+	echo "You are inside on $peer iiit:Organiaztion"
 	docker exec -it $line /bin/sh
 
 }
@@ -23,7 +23,7 @@ echo "==========================================================================
 echo "Select any one of the peer from the following"
             echo " ________________________________________________ "
 			echo "|                                                |"
-			echo "|                 Organiaztion: aic               "
+			echo "|                 Organiaztion: iiit               "
 			echo "|                                                |"
 			echo "|                 1. peer0                       |"  
 			echo "|                                                |"

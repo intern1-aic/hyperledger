@@ -1,0 +1,3 @@
+
+
+peer chaincode invoke -o orderer2.ai.com:8050 --tls true --cafile /repo/config/crypto-config/ordererOrganizations/ai.com/orderers/orderer2.ai.com/msp/tlscacerts/tlsca.ai.com-cert.pem -C channel2 -n fabcar_2 --peerAddresses peer0.bel.ai.com:7051 --tlsRootCertFiles /repo/config/crypto-config/peerOrganizations/bel.ai.com/peers/peer0.bel.ai.com/tls/server.crt --isInit -c '{"function":"initLedger","Args":[]}'

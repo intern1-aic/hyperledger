@@ -2,8 +2,8 @@
 
 begin=`date +"%T"`
 OrgName="cli-iiit"
-CHANNEL_NAME=iiithannel4
-CHAINCODE_NAME=fabcar_go-all
+CHANNEL_NAME=channel3
+CHAINCODE_NAME=fabcar_3
 
 kubectl get pods >> temp.txt
 grep "cli-iiit" temp.txt >> temp2.txt
@@ -21,10 +21,10 @@ S=0
 c=1
 	while [[ $S -eq 0 ]]; do
 
-		kubectl exec $cli -- sh -c "peer lifecycle chaincode approveformyorg --tls --cafile /repo/config/crypto-config/ordererOrganizations/ai.com/orderers/orderer4.ai.com/msp/tlscacerts/tlsca.ai.com-cert.pem --channelID channel4 --name fabcar_go-all --version 1 --init-required --package-id $PACKAGE_ID --sequence 1 --waitForEvent"
-		kubectl exec $cli -- sh -c "peer lifecycle chaincode checkcommitreadiness --channelID channel4 --name fabcar_go-all --version 1 --sequence 1 --output json --init-required " >> approve.txt
+		kubectl exec $cli -- sh -c "peer lifecycle chaincode approveformyorg --tls --cafile /repo/config/crypto-config/ordererOrganizations/ai.com/orderers/orderer3.ai.com/msp/tlscacerts/tlsca.ai.com-cert.pem --channelID channel3 --name fabcar_3 --version 1 --init-required --package-id $PACKAGE_ID --sequence 1 --waitForEvent"
+		kubectl exec $cli -- sh -c "peer lifecycle chaincode checkcommitreadiness --channelID channel3 --name fabcar_3 --version 1 --sequence 1 --output json --init-required " >> approve.txt
 		
-		grep '"Org3MSP": true,' approve.txt
+		grep '"Org3MSP": true' approve.txt
 
 	if [[ $? -eq 0 ]]; then
 		s=1		
