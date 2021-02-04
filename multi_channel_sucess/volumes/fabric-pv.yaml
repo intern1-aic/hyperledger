@@ -14,5 +14,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs: 
     path: /repo/config
-    server: 172.16.216.133
+    server: 192.168.145.21
     readOnly: false

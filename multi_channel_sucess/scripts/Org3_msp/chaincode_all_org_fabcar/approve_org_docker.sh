@@ -24,7 +24,7 @@ c=1
 		docker  exec $cli /bin/sh -c "peer lifecycle chaincode approveformyorg --tls --cafile /repo/config/crypto-config/ordererOrganizations/ai.com/orderers/orderer4.ai.com/msp/tlscacerts/tlsca.ai.com-cert.pem --channelID channel4 --name fabcar_go-all --version 1 --init-required --package-id $PACKAGE_ID --sequence 1 --waitForEvent"
 		docker  exec $cli /bin/sh -c "peer lifecycle chaincode checkcommitreadiness --channelID channel4 --name fabcar_go-all --version 1 --sequence 1 --output json --init-required " >> approve.txt
 		
-		grep '"Org3MSP": true,' approve.txt
+		grep '"Org3MSP": true' approve.txt
 
 	if [[ $? -eq 0 ]]; then
 		s=1		
