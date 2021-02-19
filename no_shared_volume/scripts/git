@@ -1,0 +1,4 @@
+git init
+git add <folder name>
+git commit -m "info"
+git push origin

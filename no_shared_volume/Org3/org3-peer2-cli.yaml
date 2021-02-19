@@ -1,0 +1,64 @@
+--- #---------------- CLI Deployment ---------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cli-iiit-peer2
+  name: cli-iiit-peer2
+  # namespace: hyperledger
+spec:
+  selector:
+    matchLabels:
+      app: cli-iiit-peer2
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: cli-iiit-peer2
+    spec:
+      nodeName: worker-node-2
+      containers:
+        - env:
+            - name: TZ
+              value: "Asia/Kolkata"
+            - name: FABRIC_LOGGING_SPEC
+              value: INFO
+            - name: CORE_PEER_ADDRESS
+              value: peer2.iiit.ai.com:7051
+            - name: CORE_PEER_ID
+              value: cli-iiit-peer2
+            - name: CORE_PEER_LOCALMSPID
+              value: Org3MSP
+            - name: CORE_PEER_MSPCONFIGPATH
+              value: /MSP_Org3/config/crypto-config/peerOrganizations/iiit.ai.com/users/Admin@iiit.ai.com/msp
+            - name: CORE_PEER_TLS_CERT_FILE
+              value: /MSP_Org3/config/crypto-config/peerOrganizations/iiit.ai.com/peers/peer2.iiit.ai.com/tls/server.crt
+            - name: CORE_PEER_TLS_ENABLED
+              value: "true"
+            - name: CORE_PEER_TLS_KEY_FILE
+              value: /MSP_Org3/config/crypto-config/peerOrganizations/iiit.ai.com/peers/peer2.iiit.ai.com/tls/server.key
+            - name: CORE_PEER_TLS_ROOTCERT_FILE
+              value: /MSP_Org3/config/crypto-config/peerOrganizations/iiit.ai.com/peers/peer2.iiit.ai.com/tls/ca.crt
+            - name: GOPATH
+              value: /opt/gopath
+            - name: ORDERER_CA
+              value: /MSP_Org3/config/crypto-config/ordererOrganizations/ai.com/orderers/orderer.ai.com/msp/tlscacerts/tlsca.ai.com-cert.pem
+          image: hyperledger/fabric-tools:2.0.1
+          name: cli
+          tty: true
+          volumeMounts:
+          - mountPath: /MSP_Org3/config
+            name: fabricfiles3
+          - mountPath: /var/run/docker.sock
+            name: dockersocket
+      volumes:
+          - name: fabricfiles3
+            persistentVolumeClaim:
+              claimName: fabric-pvc3
+          - hostPath:
+              path: /var/run/docker.sock
+              type: ""
+            name: dockersocket   
+         
