@@ -1,0 +1,8 @@
+PeerOrgs:  
+  - Name: Org3
+    Domain: iiit.ai.com
+    EnableNodeOUs: true    
+    Template:
+      Count: 3
+    Users:
+      Count: 1

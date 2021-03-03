@@ -1,0 +1,27 @@
+NAME                              READY   STATUS    RESTARTS   AGE   IP              NODE            NOMINATED NODE   READINESS GATES
+channel-binaries-org1             1/1     Running   0          39m   172.19.212.65   worker-node-1   <none>           <none>
+channel-binaries-org2             1/1     Running   0          39m   172.19.19.129   worker-node-2   <none>           <none>
+channel-binaries-org3             1/1     Running   0          39m   172.19.19.130   worker-node-2   <none>           <none>
+cli-aic-peer0-64d7b49fc-r5smz     1/1     Running   0          35m   172.19.212.72   worker-node-1   <none>           <none>
+cli-aic-peer1-69dc8c67c-7xjmn     1/1     Running   0          35m   172.19.212.71   worker-node-1   <none>           <none>
+cli-aic-peer2-5c56b6944c-cjqw8    1/1     Running   0          35m   172.19.212.73   worker-node-1   <none>           <none>
+cli-bel-peer0-7dbb7d8f79-kltj4    1/1     Running   0          35m   172.19.19.131   worker-node-2   <none>           <none>
+cli-bel-peer1-75dc4d7f7b-hs2zc    1/1     Running   0          35m   172.19.19.132   worker-node-2   <none>           <none>
+cli-bel-peer2-57b6f84fc8-rzdz9    1/1     Running   0          35m   172.19.19.135   worker-node-2   <none>           <none>
+cli-iiit-peer0-599dd848b8-8wz8n   1/1     Running   0          35m   172.19.19.136   worker-node-2   <none>           <none>
+cli-iiit-peer1-784c75cbc6-rqkvg   1/1     Running   0          35m   172.19.19.137   worker-node-2   <none>           <none>
+cli-iiit-peer2-8579ccbb76-z5br4   1/1     Running   0          35m   172.19.19.141   worker-node-2   <none>           <none>
+orderer-6b7fd848fd-6td2h          1/1     Running   0          35m   172.19.212.66   worker-node-1   <none>           <none>
+orderer2-664dd47568-cdlr8         1/1     Running   0          35m   172.19.212.67   worker-node-1   <none>           <none>
+orderer3-5d5fdf6854-txg6p         1/1     Running   0          35m   172.19.212.69   worker-node-1   <none>           <none>
+orderer4-58c9687698-thcmx         1/1     Running   0          35m   172.19.212.68   worker-node-1   <none>           <none>
+orderer5-6fdd88654-mjpmq          1/1     Running   0          35m   172.19.212.70   worker-node-1   <none>           <none>
+peer0aic-56f7c894d-9rk52          2/2     Running   1          35m   172.19.212.74   worker-node-1   <none>           <none>
+peer0bel-6bc45c79bb-vvhzj         2/2     Running   1          35m   172.19.19.133   worker-node-2   <none>           <none>
+peer0iiit-7c65cc866c-rs4wl        2/2     Running   1          35m   172.19.19.138   worker-node-2   <none>           <none>
+peer1aic-67b7746468-nd5w8         2/2     Running   1          35m   172.19.212.75   worker-node-1   <none>           <none>
+peer1bel-6dc76778bb-zxnjw         2/2     Running   1          35m   172.19.19.134   worker-node-2   <none>           <none>
+peer1iiit-6987545c6f-f6fbq        2/2     Running   1          35m   172.19.19.142   worker-node-2   <none>           <none>
+peer2aic-57f8d8684-npv8m          2/2     Running   1          35m   172.19.212.76   worker-node-1   <none>           <none>
+peer2bel-6d6df566b-2bcxx          2/2     Running   1          35m   172.19.19.139   worker-node-2   <none>           <none>
+peer2iiit-69f6c6f4c9-jw4th        2/2     Running   1          35m   172.19.19.140   worker-node-2   <none>           <none>

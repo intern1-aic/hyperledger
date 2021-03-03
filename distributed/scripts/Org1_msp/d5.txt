@@ -1,0 +1,5 @@
+172.19.212.66	orderer-6b7fd848fd-6td2h.ai.com
+172.19.212.67	orderer2-664dd47568-cdlr8.ai.com
+172.19.212.69	orderer3-5d5fdf6854-txg6p.ai.com
+172.19.212.68	orderer4-58c9687698-thcmx.ai.com
+172.19.212.70	orderer5-6fdd88654-mjpmq.ai.com

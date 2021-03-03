@@ -1,0 +1,4 @@
+NAME                    READY   STATUS    RESTARTS   AGE
+channel-binaries-org1   1/1     Running   0          4m42s
+channel-binaries-org2   1/1     Running   0          4m35s
+channel-binaries-org3   1/1     Running   0          4m30s

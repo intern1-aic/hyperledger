@@ -1,0 +1,16 @@
+NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+kubernetes   ClusterIP   10.96.0.1        <none>        443/TCP                      70m
+orderer      ClusterIP   10.110.141.186   <none>        7050/TCP                     50m
+orderer2     ClusterIP   10.104.77.120    <none>        8050/TCP                     50m
+orderer3     ClusterIP   10.96.96.199     <none>        9050/TCP                     50m
+orderer4     ClusterIP   10.98.14.243     <none>        10050/TCP                    50m
+orderer5     ClusterIP   10.107.131.158   <none>        11050/TCP                    49m
+peer0aic     ClusterIP   10.110.242.234   <none>        7051/TCP,7061/TCP,5984/TCP   49m
+peer0bel     ClusterIP   10.111.243.211   <none>        7051/TCP,7061/TCP,5984/TCP   49m
+peer0iiit    ClusterIP   10.107.52.218    <none>        7051/TCP,7061/TCP,5984/TCP   49m
+peer1aic     ClusterIP   10.105.69.249    <none>        7051/TCP,7061/TCP,5984/TCP   49m
+peer1bel     ClusterIP   10.101.19.141    <none>        7051/TCP,7061/TCP,5984/TCP   49m
+peer1iiit    ClusterIP   10.103.139.229   <none>        7051/TCP,7061/TCP,5984/TCP   49m
+peer2aic     ClusterIP   10.111.208.243   <none>        7051/TCP,7061/TCP,5984/TCP   49m
+peer2bel     ClusterIP   10.102.23.182    <none>        7051/TCP,7061/TCP,5984/TCP   49m
+peer2iiit    ClusterIP   10.107.37.112    <none>        7051/TCP,7061/TCP,5984/TCP   49m

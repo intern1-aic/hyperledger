@@ -1,0 +1,3 @@
+
+
+peer chaincode invoke -o orderer4.ai.com:10050 --tls true --cafile /MSP_Org3/config/crypto-config/ordererOrganizations/ai.com/orderers/orderer4.ai.com/msp/tlscacerts/tlsca.ai.com-cert.pem -C channel4 -n fabcar_go-all --peerAddresses peer0.aic.ai.com:7051 --tlsRootCertFiles /MSP_Org3/config/crt/org1/server.crt --peerAddresses peer0.bel.ai.com:7051 --tlsRootCertFiles /MSP_Org3/config/crt/org2/server.crt --peerAddresses peer0.iiit.ai.com:7051 --tlsRootCertFiles /MSP_Org3/config/crt/org3/server.crt --isInit -c '{"function":"initLedger","Args":[]}'

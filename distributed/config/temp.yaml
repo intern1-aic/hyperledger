@@ -1,0 +1,21 @@
+#please do not change this file
+Channels:
+  blockchannel1:
+    name: channel1
+  blockchannel2:
+    name: channel2
+  blockchannel3:
+    name: channel3
+  blockchannel4:
+    name: channel4
+Org1:
+  name: aic
+  chaincode: fabcar_1
+Org2:
+  name: bel
+  chaincode: fabcar_2
+Org3:
+  name: iiit
+  chaincode: fabcar_3
+InterOrg:
+  chaincode: fabcar_go_all

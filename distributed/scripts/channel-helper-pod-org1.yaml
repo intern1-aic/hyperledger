@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: channel-binaries-org1
+spec:
+    nodeName: worker-node-1
+    containers:
+    - name: alpine
+      image: alpine:latest
+      command: ['sleep', 'infinity']
+      volumeMounts:
+      - name: fabric-pv1
+        mountPath: /MSP_Org1/config
+    volumes:
+    - name: fabric-pv1
+      persistentVolumeClaim:
+        claimName: fabric-pvc1
+

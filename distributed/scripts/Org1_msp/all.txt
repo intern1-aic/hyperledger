@@ -1,0 +1,9 @@
+172.19.212.74	peer0aic
+172.19.19.133	peer0bel
+172.19.19.138	peer0iiit
+172.19.212.75	peer1aic
+172.19.19.134	peer1bel
+172.19.19.142	peer1iiit
+172.19.212.76	peer2aic
+172.19.19.139	peer2bel
+172.19.19.140	peer2iiit

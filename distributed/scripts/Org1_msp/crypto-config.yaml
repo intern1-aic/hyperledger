@@ -1,0 +1,9 @@
+PeerOrgs:
+  - Name: Org1
+    Domain: aic.ai.com
+    EnableNodeOUs: true    
+    Template:
+      Count: 3
+    Users:
+      Count: 1
+      

@@ -1,0 +1,9 @@
+172.19.212.74	peer0.aic.ai.com
+172.19.19.133	peer0.bel.ai.com
+172.19.19.138	peer0.iiit.ai.com
+172.19.212.75	peer1.aic.ai.com
+172.19.19.134	peer1.bel.ai.com
+172.19.19.142	peer1.iiit.ai.com
+172.19.212.76	peer2.aic.ai.com
+172.19.19.139	peer2.bel.ai.com
+172.19.19.140	peer2.iiit.ai.com

@@ -1,0 +1,5 @@
+172.19.212.66	orderer.ai.com
+172.19.212.67	orderer2.ai.com
+172.19.212.69	orderer3.ai.com
+172.19.212.68	orderer4.ai.com
+172.19.212.70	orderer5.ai.com

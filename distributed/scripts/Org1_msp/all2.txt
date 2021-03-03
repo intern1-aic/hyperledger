@@ -1,0 +1,9 @@
+peer0.aic.ai.com
+peer0.bel.ai.com
+peer0.iiit.ai.com
+peer1.aic.ai.com
+peer1.bel.ai.com
+peer1.iiit.ai.com
+peer2.aic.ai.com
+peer2.bel.ai.com
+peer2.iiit.ai.com
